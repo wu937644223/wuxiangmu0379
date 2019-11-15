@@ -20,18 +20,4 @@
             alert('登录失败，请重新登录')
         }
     })
-
-    // var t1 = false;
-    // var t2 = false;
-    // var i1 = document.querySelector('.sign-user p:nth-child(1) i')
-    // $('#sub').on('click', function(){
-    //     var tel =  $('.sign-user #txt1').html();
-    //     var reg = /^1\d{10}$/
-    //     if(!reg.test(tel)){
-    //         i1.style.display = "block";
-            // t1 = false;
-        // }else{
-            // t1 = true;
-        // }
-    // })
 })();

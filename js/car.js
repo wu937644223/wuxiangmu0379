@@ -136,10 +136,6 @@
                         var num = so[i].parentNode.parentNode.children[2].children[1].children[1].value;
                         var price = so[i].parentNode.parentNode.children[2].children[0].innerHTML.replace('￥','');
                         // console.log(img)
-                    
-                        // var name = $('.goods-txt p').html();
-                        // var price = $('.goods ul li:nth-child(1)').html().replace('￥','');
-                        // var num = $('.goods ul li:nth-child(2) input').val();
                         buy.push({
                             id: id,
                             img: img,
@@ -166,7 +162,7 @@
             for(var i=0;i<this.res.length;i++){
                 for(var j=0;j<this.goods.length;j++){
                     if(this.res[i].id == this.goods[j].id){
-                        var p = this.goods[j].num * this.res[i].price;
+                        var p = parseFloat(this.goods[j].num) * parseFloat(this.res[i].price);
                         str += `<div class="goods" index="${this.goods[j].id}">
                                     <span class="span-box">
                                         <input class="selectone" type="checkbox">
@@ -180,14 +176,14 @@
                                         </div>
                                     </a>
                                     <ul class="fr">
-                                        <li>￥${this.res[i].price}</li>
+                                        <li>💰${this.res[i].price}</li>
                                         <li>
                                             <span class="left">-</span>
                                             <input type="text" value="${this.goods[j].num}" readonly>
                                             <span class="right">+</span>
                                         </li>
-                                        <li>￥${p}</li>
-                                        <li><a class="del" href="javascript:;">删除</a></li>
+                                        <li>😭${p}</li>
+                                        <li><a class="del" href="javascript:;">⛔</a></li>
                                     </ul>
                                 </div>`
                     }
@@ -208,7 +204,7 @@
     }
     new Car();
     $('.goods-sum .pay').on('click', function(){
-        window.location.href = 'order.html'
+        // window.location.href = 'order.html'
     })
 
 

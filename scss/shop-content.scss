@@ -294,7 +294,7 @@
             }
             .style-r {
                 margin-left: 16px;
-                width: 600px;
+                width: 650px;
                 a {
                     float: left;
                     height: 52px;
@@ -388,6 +388,12 @@
                 background-image: none;
                 background-color: #fff;
                 margin-left: 10px;
+                span:hover{
+                    cursor: pointer;
+                }
+            }
+            .content-img{
+                height: 500px;
             }
         }
     }

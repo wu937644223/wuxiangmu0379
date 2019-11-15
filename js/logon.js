@@ -73,7 +73,7 @@
             $.cookie('password',password);
             window.location.href = 'sign.html'
         }else{
-            alert("提交失败")
+            alert("注册失败")
         }
     })
 })();

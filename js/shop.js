@@ -26,16 +26,12 @@
                         that.res.sort( function(a,b) {
                             return b.price - a.price;
                         })
-                        // $('.right-top li .sort').html('价格由高到低')
-                        // console.log(that.res)
                         that.display();
                         onoff = 1;
                 }else{
                     that.res.sort( function(a,b) {
                         return a.price - b.price;
                     })
-                    // $('.right-top li .sort').html('价格由低到高')
-                    // console.log(that.res)
                     that.display();
                     onoff = 0;
                 }

@@ -1756,7 +1756,7 @@
         text-align: right; }
       .content-main .detail-right .style .style-r {
         margin-left: 16px;
-        width: 600px; }
+        width: 650px; }
         .content-main .detail-right .style .style-r a {
           float: left;
           height: 52px;
@@ -1839,6 +1839,10 @@
         background-image: none;
         background-color: #fff;
         margin-left: 10px; }
+        .content-main .detail-right .button .add span:hover {
+          cursor: pointer; }
+      .content-main .detail-right .button .content-img {
+        height: 500px; }
 
 .shop-main {
   width: 100%;

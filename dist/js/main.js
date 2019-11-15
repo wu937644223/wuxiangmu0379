@@ -171,10 +171,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                             var num = so[i].parentNode.parentNode.children[2].children[1].children[1].value;
                             var price = so[i].parentNode.parentNode.children[2].children[0].innerHTML.replace('￥', '');
                             // console.log(img)
-
-                            // var name = $('.goods-txt p').html();
-                            // var price = $('.goods ul li:nth-child(1)').html().replace('￥','');
-                            // var num = $('.goods ul li:nth-child(2) input').val();
                             buy.push({
                                 id: id,
                                 img: img,
@@ -202,8 +198,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                 for (var i = 0; i < this.res.length; i++) {
                     for (var j = 0; j < this.goods.length; j++) {
                         if (this.res[i].id == this.goods[j].id) {
-                            var p = this.goods[j].num * this.res[i].price;
-                            str += "<div class=\"goods\" index=\"" + this.goods[j].id + "\">\n                                    <span class=\"span-box\">\n                                        <input class=\"selectone\" type=\"checkbox\">\n                                    </span>\n                                    <a class=\"goods-a\" href=\"#\">\n                                        <div class=\"goods-img fl\">\n                                            <img src=\"" + this.res[i].img + "\" alt=\"\">\n                                        </div>\n                                        <div class=\"goods-txt fl\">\n                                            <p>" + this.res[i].name + "</p>\n                                        </div>\n                                    </a>\n                                    <ul class=\"fr\">\n                                        <li>\uFFE5" + this.res[i].price + "</li>\n                                        <li>\n                                            <span class=\"left\">-</span>\n                                            <input type=\"text\" value=\"" + this.goods[j].num + "\" readonly>\n                                            <span class=\"right\">+</span>\n                                        </li>\n                                        <li>\uFFE5" + p + "</li>\n                                        <li><a class=\"del\" href=\"javascript:;\">\u5220\u9664</a></li>\n                                    </ul>\n                                </div>";
+                            var p = parseFloat(this.goods[j].num) * parseFloat(this.res[i].price);
+                            str += "<div class=\"goods\" index=\"" + this.goods[j].id + "\">\n                                    <span class=\"span-box\">\n                                        <input class=\"selectone\" type=\"checkbox\">\n                                    </span>\n                                    <a class=\"goods-a\" href=\"#\">\n                                        <div class=\"goods-img fl\">\n                                            <img src=\"" + this.res[i].img + "\" alt=\"\">\n                                        </div>\n                                        <div class=\"goods-txt fl\">\n                                            <p>" + this.res[i].name + "</p>\n                                        </div>\n                                    </a>\n                                    <ul class=\"fr\">\n                                        <li>\uD83D\uDCB0" + this.res[i].price + "</li>\n                                        <li>\n                                            <span class=\"left\">-</span>\n                                            <input type=\"text\" value=\"" + this.goods[j].num + "\" readonly>\n                                            <span class=\"right\">+</span>\n                                        </li>\n                                        <li>\uD83D\uDE2D" + p + "</li>\n                                        <li><a class=\"del\" href=\"javascript:;\">\u26D4</a></li>\n                                    </ul>\n                                </div>";
                         }
                     }
                 }
@@ -225,7 +221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     new Car();
     $('.goods-sum .pay').on('click', function () {
-        window.location.href = 'order.html';
+        // window.location.href = 'order.html'
     });
 })();
 ;(function () {
@@ -615,7 +611,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             $.cookie('password', password);
             window.location.href = 'sign.html';
         } else {
-            alert("提交失败");
+            alert("注册失败");
         }
     });
 })();
@@ -732,16 +728,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                         that.res.sort(function (a, b) {
                             return b.price - a.price;
                         });
-                        // $('.right-top li .sort').html('价格由高到低')
-                        // console.log(that.res)
                         that.display();
                         onoff = 1;
                     } else {
                         that.res.sort(function (a, b) {
                             return a.price - b.price;
                         });
-                        // $('.right-top li .sort').html('价格由低到高')
-                        // console.log(that.res)
                         that.display();
                         onoff = 0;
                     }
@@ -842,18 +834,4 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             alert('登录失败，请重新登录');
         }
     });
-
-    // var t1 = false;
-    // var t2 = false;
-    // var i1 = document.querySelector('.sign-user p:nth-child(1) i')
-    // $('#sub').on('click', function(){
-    //     var tel =  $('.sign-user #txt1').html();
-    //     var reg = /^1\d{10}$/
-    //     if(!reg.test(tel)){
-    //         i1.style.display = "block";
-    // t1 = false;
-    // }else{
-    // t1 = true;
-    // }
-    // })
 })();
